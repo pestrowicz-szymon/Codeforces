@@ -18,8 +18,13 @@ try {
 
     Write-Host "Running test..." -ForegroundColor Cyan
 
+    $sw = [System.Diagnostics.Stopwatch]::StartNew()
     cmd.exe /c "java Main < input.txt > output.txt"
+    $sw.Stop()
+    $elapsedMs = $sw.ElapsedMilliseconds
 
+    Write-Host "---------------------------------------"
+    Write-Host "EXECUTION TIME: ${elapsedMs} ms" -ForegroundColor Yellow
     Write-Host "---------------------------------------"
     Write-Host "YOUR OUTPUT:"
     Get-Content output.txt
@@ -35,7 +40,7 @@ try {
     $expClean = $expLines -join "`n"
 
     if ($outClean -eq $expClean -and $outClean -ne "") {
-        Write-Host "[RESULT] TEST PASSED!" -ForegroundColor Green
+        Write-Host "[RESULT] TEST PASSED! (${elapsedMs} ms)" -ForegroundColor Green
     } elseif ($outClean -eq "") {
         Write-Host "[RESULT] TEST FAILED! (Your program produced NO output)" -ForegroundColor Red
     } else {
