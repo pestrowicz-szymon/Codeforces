@@ -21,7 +21,7 @@ public class Problem230B {
         isPrime[0] = isPrime[1] = false;
         for (int i = 2; i * i <= 1000000; i++) {
             if (isPrime[i]) {
-                for (int j = 2 * i; j <= 1000000; j += i) {
+                for (int j = i * i; j <= 1000000; j += i) {
                     isPrime[j] = false;
                 }
             }
@@ -33,7 +33,7 @@ public class Problem230B {
 
             int sqrtX = (int) Math.sqrt(x);
 
-            if (Math.pow(sqrtX, 2) != x) {
+            if ((long) sqrtX * sqrtX != x) {
                 result.append("NO\n");
                 continue;
             }
