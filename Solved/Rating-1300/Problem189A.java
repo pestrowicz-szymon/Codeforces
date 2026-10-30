@@ -1,14 +1,12 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.Locale;
 import java.util.StringTokenizer;
 import java.io.IOException;
 
 public class Problem189A {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder result = new StringBuilder();
 
         String line = reader.readLine();
         StringTokenizer st = new StringTokenizer(line);

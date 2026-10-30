@@ -6,7 +6,6 @@ import java.io.IOException;
 public class Problem466A {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder result = new StringBuilder();
 
         String line = reader.readLine();
         StringTokenizer st = new StringTokenizer(line);
